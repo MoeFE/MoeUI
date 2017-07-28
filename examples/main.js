@@ -1,11 +1,14 @@
+import '../src/styles/index.scss';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
-
+import MoeUI from '../src/index';
 import * as Pages from './pages';
 
 Vue.use(VueRouter);
-// Vue.config.debug = true;
+Vue.use(MoeUI);
+
+Vue.config.debug = true;
 
 let pages = Pages.default;
 

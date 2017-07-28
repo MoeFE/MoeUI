@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="content">
         <nav>
             <ul class="list">
                 <li>
@@ -27,7 +27,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../src/styles/index.scss";
+.content{
+    box-sizing: border-box;
+    padding: 20px 0 0 40px;
+}
 nav {
     position: absolute;
     width: 200px;

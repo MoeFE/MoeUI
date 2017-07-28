@@ -1,0 +1,10 @@
+$btn-prefix : #{$prefix}btn;
+
+.#{$btn-prefix}{
+    @include btn-base($btn-padding-base);
+    @include btn-color($defaut-color, $background, $defaut-color);
+    
+    &-long{
+        width: 100%;
+    }
+}

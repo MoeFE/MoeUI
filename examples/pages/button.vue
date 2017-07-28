@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button>button</button>
+        <moe-button>Button</moe-button>
     </div>
 </template>
 
