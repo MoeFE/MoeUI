@@ -1,0 +1,102 @@
+@mixin btn-base($padding) {
+    position: relative;
+    display: inline-block;
+    padding: $padding;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $btn-border-radius;
+    white-space: nowrap;
+    line-height: $line-height;
+    user-select: none;
+    //transform: translate3d(0, 0, 0);
+    //transition: all @transition-time linear;
+    transition: color $transition-time ease, background-color $transition-time ease, border $transition-time ease;
+
+    &,
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+
+    &:not([disabled]):hover {
+        text-decoration: none;
+    }
+
+    &:not([disabled]):active {
+        outline: 0;
+        transition: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        > * {
+            pointer-events: none;
+        }
+    }
+
+    > a:only-child {
+        color: currentColor;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: transparent;
+        }
+    }
+}
+@mixin btn-color($color, $background, $border){
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    &:hover{
+        border-color: lighten($border,3%);
+        background-color: lighten($background,3%);
+        color: lighten($color,3%);
+        .moe-btn-svg{
+            path {
+                stroke: lighten($border,3%);
+                stroke-width: 2px;
+                fill: lighten($background,3%);
+            }
+        }
+    }
+    &:active,
+    &.active{
+        border-color: darken($border,3%);
+        background-color: lighten($background,3%);        
+        color: darken($color,3%);
+        .moe-btn-svg{
+            path {
+                stroke: darken($border,3%);
+                stroke-width: 2px;
+            }
+        }
+    }
+    .moe-btn-svg{
+        path {
+            stroke: $border;
+            stroke-width: 2px;
+            fill: $background;
+        }
+    }
+}
+@mixin btn-svg(){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $btn-svg-width-base;
+    height: auto;
+    margin-top: -12%;
+    margin-right: -12%;
+    z-index: 10;
+}

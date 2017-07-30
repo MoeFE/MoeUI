@@ -10,7 +10,7 @@
 
 <script>
 export default {
-
+    
 }
 </script>
 
@@ -29,7 +29,6 @@ export default {
 .right {
     float: right;
     width: 45%;
-    color: #C0B0FF;
     font-size: 2rem;
     font-weight: 200;
     h1 {

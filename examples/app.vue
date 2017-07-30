@@ -32,13 +32,14 @@ export default {
     padding: 20px 0 0 40px;
 }
 nav {
-    position: absolute;
+    position: fixed;
     width: 200px;
     right: 0;
     top: 0;
     bottom: 0;
     z-index: 1000;
-    color: #C0B0FF;
+    background: #C0B0FF;
+    color: #fffefe;
 }
 
 a {
@@ -61,17 +62,19 @@ a:active {
         height: 40px;
         font-size: 20px;
         a {
-            width: 90%;
+            width: 100%;            
             float: right;
             line-height: 40px;
             transition: .3s;
             box-sizing: border-box;
+            padding-left: 20%;
+            cursor: pointer;
             &:hover {
-                width: 100%;
+                padding-left: 10%;
             }
         }
         .router-link-exact-active {
-            border-bottom: 1px #ddd solid;
+            background: #ccbfff;
         }
     }
 }

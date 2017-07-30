@@ -1,6 +1,8 @@
 <template>
     <div>
-        <moe-button>Button</moe-button>
+        <h2>Special Buttons</h2>
+        <moe-button icon="heart" type="default">/// 好き ///</moe-button>
+        <moe-button icon="star" type="default">マーク</moe-button>
     </div>
 </template>
 

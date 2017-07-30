@@ -4908,6 +4908,10 @@ supports-color@^4.0.0, supports-color@^4.2.0, supports-color@^4.2.1:
   dependencies:
     has-flag "^2.0.0"
 
+svg.js:
+  version "2.6.3"
+  resolved "http://registry.npm.taobao.org/svg.js/download/svg.js-2.6.3.tgz#ac07c61f54ada2745548800307bb45b4b3b519eb"
+
 svgo@^0.7.0:
   version "0.7.2"
   resolved "http://registry.npm.taobao.org/svgo/download/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"

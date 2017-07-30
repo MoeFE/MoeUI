@@ -1,10 +1,12 @@
-$btn-prefix : #{$prefix}btn;
+$btn-prefix: #{$prefix}btn;
+$btn-svg-prefix: #{$btn-prefix}-svg;
 
 .#{$btn-prefix}{
     @include btn-base($btn-padding-base);
-    @include btn-color($defaut-color, $background, $defaut-color);
-    
-    &-long{
-        width: 100%;
+    &-default{
+        @include btn-color($default-color, $btn-default-bg, $btn-default-border);
     }
+}
+.#{$btn-svg-prefix}{
+    @include btn-svg();
 }
