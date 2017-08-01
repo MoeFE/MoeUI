@@ -41,6 +41,18 @@
         }
     }
 
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            @include btn-color($btn-disable-color, $btn-disable-bg, $btn-disable-border);
+        }
+    }
+
     > a:only-child {
         color: currentColor;
         &:after {
@@ -58,35 +70,37 @@
     color: $color;
     background-color: $background;
     border-color: $border;
+    .moe-btn-svg{
+        path {
+            stroke: $border;
+            stroke-width: 2px;
+            fill: $background;
+        }
+    }
+}
+@mixin btn-action($color, $background, $border){
     &:hover{
         border-color: lighten($border,3%);
-        background-color: lighten($background,3%);
+        background-color: lighten($background,5%);
         color: lighten($color,3%);
         .moe-btn-svg{
             path {
                 stroke: lighten($border,3%);
                 stroke-width: 2px;
-                fill: lighten($background,3%);
+                fill: lighten($background,5%);
             }
         }
     }
     &:active,
     &.active{
         border-color: darken($border,3%);
-        background-color: lighten($background,3%);        
-        color: darken($color,3%);
+        background-color: $background;        
         .moe-btn-svg{
             path {
                 stroke: darken($border,3%);
                 stroke-width: 2px;
+                fill: $background;
             }
-        }
-    }
-    .moe-btn-svg{
-        path {
-            stroke: $border;
-            stroke-width: 2px;
-            fill: $background;
         }
     }
 }
@@ -99,4 +113,5 @@
     margin-top: -12%;
     margin-right: -12%;
     z-index: 10;
+    transform: rotate(30deg);
 }

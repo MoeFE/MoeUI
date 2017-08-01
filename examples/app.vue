@@ -74,7 +74,7 @@ a:active {
             }
         }
         .router-link-exact-active {
-            background: #ccbfff;
+            background: #cabdff;
         }
     }
 }
