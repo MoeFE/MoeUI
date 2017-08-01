@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import SVG from 'svg.js'
 import Star from '../svgs/star.vue';
 import Heart from '../svgs/heart.vue';
 const prefix = 'moe-btn';
@@ -34,18 +33,6 @@ export default {
             this.$emit('click', event);
         }
     },
-    mounted: function () {
-        // const icon = this.icon;
-        // let s;
-        // if (icon === 'star') {
-        //     s = SVG("moe-svg-star");
-        // } else if (icon === 'heart') {
-        //     s = SVG("moe-svg-heart");
-        // } else {
-        //     return;
-        // }
-        // s.rotate(30,0,0);
-    }
 
 }
 </script>

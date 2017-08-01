@@ -18,6 +18,13 @@
             <moe-button icon="heart" type="default">/// 好き ///</moe-button>
             <moe-button icon="star" type="default">> マーク <</moe-button>
         </div>
+        <div>
+            <h2>Button Group</h2>
+            <moe-button-group>
+                <moe-button type="default"><- Prev</moe-button>
+                <moe-button type="default">Next -></moe-button>
+            </moe-button-group>
+        </div>
     </div>
 </template>
 
