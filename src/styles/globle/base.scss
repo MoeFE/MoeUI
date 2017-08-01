@@ -1,0 +1,24 @@
+@import '../../libs/normalize.scss';
+
+body{
+    font-family: $font-family;
+    color: $default-color;
+    font-size: $font-size;
+    line-height: $line-height;
+    background-color: $background;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $default-color-dark;
+    margin: $margin-h;
+}
+p{
+    margin: $margin-p;    
+}

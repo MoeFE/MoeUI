@@ -7,6 +7,7 @@ module.exports = {
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
     module: {
+
         rules: [{
             test: /\.vue$/,
             loader: 'vue-loader',
