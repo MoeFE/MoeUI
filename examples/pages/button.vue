@@ -22,6 +22,10 @@
             <h2>Button Group</h2>
             <moe-button-group>
                 <moe-button type="default"><- Prev</moe-button>
+                <moe-button type="default">1</moe-button>
+                <moe-button type="default">2</moe-button>
+                <moe-button type="default">3</moe-button>
+                <moe-button type="default">4</moe-button>
                 <moe-button type="default">Next -></moe-button>
             </moe-button-group>
         </div>
@@ -30,7 +34,7 @@
 
 <script>
 export default {
-
+    
 }
 </script>
 

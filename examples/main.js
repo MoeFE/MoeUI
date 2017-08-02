@@ -21,8 +21,8 @@ const router = new VueRouter({
             path: '/button',
             component: pages.button
         }, {
-            path: '/layout',
-            component: pages.layout
+            path: '/grid',
+            component: pages.grid
         }, {
             path: '/color',
             component: pages.color

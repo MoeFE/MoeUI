@@ -14,16 +14,17 @@ const prefix = 'moe-btn';
 export default {
     name: 'MoeButton',
     components: { Star, Heart },
-    props: ['icon', 'type', 'size', 'disabled'],
+    props: {
+        icon: String,
+        type: String,
+        disabled: Boolean
+    },
     computed: {
         classes() {
             return [
                 `${prefix}`,
                 {
                     [`${prefix}-${this.type}`]: !!this.type,
-                    [`${prefix}-long`]: this.long,
-                    [`${prefix}-${this.shape}`]: !!this.shape,
-                    [`${prefix}-${this.size}`]: !!this.size,
                 }
             ];
         }

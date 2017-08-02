@@ -1,9 +1,12 @@
 import Button from './components/button';
 import ButtonGroup from './components/button-group';
+import { Row, Col } from './components/grid';
 
 const components = [
     Button,
-    ButtonGroup
+    ButtonGroup,
+    Row,
+    Col,
 ];
     
 const install = function (Vue) {
