@@ -7,7 +7,7 @@ now coding...
 ## Development
 
 ``` shell
-git clone git@github.com:ElemeFE/element.git
+git clone git@github.com:InfiniteSword/MoeUI.git
 yarn
 # Chinese developers can use cyarn
 yarn run dev
