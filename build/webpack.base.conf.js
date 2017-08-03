@@ -25,20 +25,6 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader?cacheDirectory'
         }, {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'autoprefixer-loader'
-            ]
-        }, {
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'sass-loader?sourceMap'
-            ]
-        }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=8192'
         }, {

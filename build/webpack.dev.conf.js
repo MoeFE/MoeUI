@@ -10,7 +10,23 @@ const webpack = require('webpack'),
 
 let version = packageConf.version,
     library = packageConf.name.toUpperCase();
-
+    
+const styleLoaders = [{
+    test: /\.css$/,
+    use: [
+        'style-loader',
+        'css-loader',
+        'autoprefixer-loader'
+    ]
+}, {
+    test: /\.scss$/,
+    use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader?sourceMap'
+    ]
+}, ];
+webpackBaseConfig.module.rules = webpackBaseConfig.module.rules.concat(styleLoaders);
 module.exports = merge(webpackBaseConfig, {
 
     entry: {
@@ -26,7 +42,10 @@ module.exports = merge(webpackBaseConfig, {
 
     plugins: [
         new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendors', filename: 'vendor.bundle.js' }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendors',
+            filename: 'vendor.bundle.js'
+        }),
         new HtmlWebpackPlugin({
             inject: true,
             filename: path.join(__dirname, '../examples/dist/index.html'),

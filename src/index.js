@@ -1,3 +1,4 @@
+import './styles/index.scss';
 import Button from './components/button';
 import ButtonGroup from './components/button-group';
 import { Row, Col } from './components/grid';
