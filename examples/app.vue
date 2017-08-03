@@ -6,7 +6,7 @@
                     <router-link to="/">Home</router-link>
                 </li>
                 <li>
-                    <router-link to="/layout">Layout</router-link>
+                    <router-link to="/grid">Grid</router-link>
                 </li>
                 <li>
                     <router-link to="/button">Button</router-link>
