@@ -1,0 +1,33 @@
+$row-prefix: #{$prefix}row;
+$row-prefix-flex: #{$row-prefix}-flex;
+.#{$row-prefix} {
+    position: relative;
+    box-sizing: border-box;
+    @include clearfix();
+}
+
+.#{$row-prefix-flex} {
+    display: flex;
+    &:before,
+    &:after {
+        display: none;
+    }
+    .#{$row-prefix-flex}-justify-center {
+        justify-content: center;
+    }
+    .#{$row-prefix-flex}-justify-end {
+        justify-content: flex-end;
+    }
+    .#{$row-prefix-flex}-justify-space-between {
+        justify-content: space-between;
+    }
+    .#{$row-prefix-flex}-justify-space-around {
+        justify-content: space-around;
+    }
+    .#{$row-prefix-flex}-align-middle {
+        align-items: center;
+    }
+    .#{$row-prefix-flex}-align-bottom {
+        align-items: flex-end;
+    }
+}
