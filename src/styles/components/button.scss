@@ -1,0 +1,37 @@
+$btn-prefix: #{$prefix}btn;
+$btn-svg-prefix: #{$btn-prefix}-svg;
+$btn-group-prefix: #{$btn-prefix}-group;
+.#{$btn-prefix} {
+    @include btn-base($btn-padding-base);
+    @include border-box();
+    @include btn-color($default-color, $btn-default-bg, $btn-default-border);
+    @include btn-action($default-color, $btn-default-bg, $btn-default-border);
+    &-primary {
+        @include btn-color($white-color, $primary-color-light, $primary-color);
+        @include btn-action($white-color, $primary-color-light, $primary-color);
+    }
+    &-violent {
+        @include btn-color($white-color, $violent-color-light, $violent-color);
+        @include btn-action($white-color, $violent-color-light, $violent-color);
+    }
+    &-remindful {
+        @include btn-color($white-color, $remindful-color-light, $remindful-color);
+        @include btn-action($white-color, $remindful-color-light, $remindful-color);
+    }
+    &-comfy {
+        @include btn-color($white-color, $comfy-color-light, $comfy-color);
+        @include btn-action($white-color, $comfy-color-light, $comfy-color);
+    }
+    &-clean {
+        @include btn-color($primary-color, transparent, transparent);
+        @include btn-action($primary-color, transparent, transparent);
+    }
+}
+
+.#{$btn-svg-prefix} {
+    @include btn-svg();
+}
+
+.#{$btn-group-prefix} {
+    @include btn-group-base($btn-prefix);
+}
