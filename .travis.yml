@@ -1,0 +1,13 @@
+language: node_js
+branches:
+  only: master
+script:
+  - yarn run build-doc
+after_script:
+  - cd dist
+  - git init
+  - git config user.name "Dafrok"
+  - git config user.email "o.o@mug.dog"
+  - git add .
+  - git commit -m "Travis build"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/MoeFE/MoeUI.git" master:gh-pages
