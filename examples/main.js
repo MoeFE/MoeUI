@@ -26,6 +26,9 @@ const router = new VueRouter({
         }, {
             path: '/color',
             component: pages.color
+        }, {
+            path: '/input',
+            component: pages.input
         }
     ]
 });

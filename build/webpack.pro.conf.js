@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-const path = require('path'),
+const webpack = require('webpack'),
+    path = require('path'),
     fs = require('fs'),
     packageConf = JSON.parse(fs.readFileSync('./package.json', 'utf-8')),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -8,8 +9,6 @@ const path = require('path'),
 
 let version = packageConf.version,
     library = packageConf.name.toUpperCase();
-
-process.env.NODE_ENV = 'production';
 
 const styleLoaders = [{
     test: /\.s[a|c]ss$/,
@@ -22,7 +21,7 @@ const styleLoaders = [{
                 minimize: true
             }
         }, {
-            loader: 'sass-loader'
+            loader: 'sass-loader?sourceMap'
         }]
     })
 }, {
@@ -53,6 +52,11 @@ module.exports = merge(webpackBaseConfig, {
     plugins: [
         new ExtractTextPlugin({
             filename: '[name].min.css'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
     ],
 });

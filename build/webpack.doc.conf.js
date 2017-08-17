@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-const path = require('path'),
+const webpack = require('webpack'),
+    path = require('path'),
     fs = require('fs'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -16,6 +17,7 @@ const styleLoaders = [{
     test: /\.s[a|c]ss$/,
     exclude: /node_modules/,
     loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [{
             loader: 'css-loader',
             options: {
@@ -28,6 +30,7 @@ const styleLoaders = [{
 }, {
     test: /\.css$/,
     loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [{
             loader: 'css-loader',
             options: {
@@ -35,14 +38,14 @@ const styleLoaders = [{
             }
         }]
     })
-}];
+},];
 webpackBaseConfig.module.rules = webpackBaseConfig.module.rules.concat(styleLoaders);
 module.exports = merge(webpackBaseConfig, {
     entry: {
-        main: './examples/main.js'
+        main: './examples/main'
     },
     output: {
-        path: path.resolve(__dirname, '../doc'),
+        path: path.resolve(__dirname, '../docs'),
         publicPath: './',
         filename: `${library}-doc-${version}.js`,
         library: 'moeui',
@@ -52,11 +55,16 @@ module.exports = merge(webpackBaseConfig, {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
-            filename: path.join(__dirname, '../doc/index.html'),
+            filename: path.join(__dirname, '../docs/index.html'),
             template: path.join(__dirname, '../examples/index.html')
         }),
         new ExtractTextPlugin({
             filename: '[name].[contenthash:8].min.css'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
+        }),
     ],
 });

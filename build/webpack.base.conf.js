@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const webpack = require('webpack'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     path = require('path');
 
 module.exports = {
@@ -7,14 +8,20 @@ module.exports = {
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
     module: {
-
         rules: [{
             test: /\.vue$/,
+            exclude: /node_modules/,
             loader: 'vue-loader',
             options: {
                 loaders: {
-                    css: 'vue-style-loader!css-loader',
-                    scss: 'vue-style-loader!css-loader!sass-loader'
+                    css: ExtractTextPlugin.extract({
+                        use: 'css-loader',
+                        fallback: 'vue-style-loader'
+                    }),
+                    scss: ExtractTextPlugin.extract({
+                        use: ['css-loader', 'sass-loader'],
+                        fallback: 'vue-style-loader'
+                    })
                 },
                 postLoaders: {
                     html: 'babel-loader'
