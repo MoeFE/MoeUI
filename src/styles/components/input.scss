@@ -1,0 +1,18 @@
+$input-prefix: #{$prefix}input;
+
+.#{$input-prefix}-wrapper{
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    vertical-align: middle;
+}
+.#{$input-prefix} {
+    @include input-base();
+    
+}
+textarea.#{$input-prefix} {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    font-size: $font-size;
+}
