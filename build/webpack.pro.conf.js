@@ -11,6 +11,25 @@ let version = packageConf.version,
     library = packageConf.name.toUpperCase();
 
 const styleLoaders = [{
+    test: /\.vue$/,
+    exclude: /node_modules/,
+    loader: 'vue-loader',
+    options: {
+        loaders: {
+            css: ExtractTextPlugin.extract({
+                use: 'css-loader',
+                fallback: 'vue-style-loader'
+            }),
+            scss: ExtractTextPlugin.extract({
+                use: ['css-loader', 'sass-loader'],
+                fallback: 'vue-style-loader'
+            })
+        },
+        postLoaders: {
+            html: 'babel-loader'
+        }
+    }
+}, {
     test: /\.s[a|c]ss$/,
     exclude: /node_modules/,
     loader: ExtractTextPlugin.extract({

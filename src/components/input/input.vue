@@ -1,5 +1,5 @@
 <template>
-    <div :class="wrapClasses">
+    <div :class="[wrapClasses, updateClass]" @moe:focus="updateStyle">
         <input v-if="type !== 'textarea'" ref="input" :type="type" :class="inputClasses" :placeholder="placeholder" :disabled="disabled" :maxlength="maxlength" :readonly="readonly" :name="name" :value="currentValue" :autofocus="autofocus" :autocomplete="autoComplete" @keyup.enter="handleEnter" @keyup="handleKeyup" @keypress="handleKeypress" @keydown="handleKeydown" @focus="handleFocus" @blur="handleBlur" @input="handleInput" @change="handleChange">
         <textarea v-else ref="textarea" :class="textareaClasses" :style="textareaStyles" :placeholder="placeholder" :disabled="disabled" :rows="rows" :maxlength="maxlength" :readonly="readonly" :name="name" :value="currentValue" :autofocus="autofocus" @keyup.enter="handleEnter" @keyup="handleKeyup" @keypress="handleKeypress" @keydown="handleKeydown" @focus="handleFocus" @blur="handleBlur" @input="handleInput"></textarea>
     </div>
@@ -17,7 +17,8 @@ export default {
     data() {
         return {
             currentValue: this.value,
-            textareaStyles: {}
+            textareaStyles: {},
+            updateClass: ''
         };
     },
     props: {
@@ -28,6 +29,7 @@ export default {
         icon: String,
         size: String,
         disabled: Boolean,
+        center: Boolean,
         type: {
             type: String,
             default: 'text'
@@ -55,6 +57,7 @@ export default {
                 `${prefix}-wrapper`,
                 {
                     [`${prefix}-wrapper-${this.size}`]: !!this.size,
+                    [`${prefix}-${this.icon}`]: !!this.icon,
                 }
             ];
         },
@@ -63,8 +66,8 @@ export default {
                 `${prefix}`,
                 {
                     [`${prefix}-${this.size}`]: !!this.size,
-                    [`${prefix}-${this.icon}`]: !!this.icon,
-                    [`${prefix}-disabled`]: this.disabled
+                    [`${prefix}-disabled`]: this.disabled,
+                    [`${prefix}-center`]: this.center
                 }
             ];
         },
@@ -86,31 +89,33 @@ export default {
     },
     methods: {
         handleEnter(event) {
-            this.$emit('enter', event);
+            this.$emit('moe:enter', event);
         },
         handleKeydown(event) {
-            this.$emit('keydown', event);
+            this.$emit('moe:keydown', event);
         },
         handleKeypress(event) {
-            this.$emit('keypress', event);
+            this.$emit('moe:keypress', event);
         },
         handleKeyup(event) {
-            this.$emit('keyup', event);
+            this.$emit('moe:keyup', event);
         },
         handleFocus(event) {
-            this.$emit('focus', event);
+            this.updateStyle('focus');
+            this.$emit('moe:focus', event);
         },
         handleBlur(event) {
-            this.$emit('blur', event);
+            this.updateStyle('blur');
+            this.$emit('moe:blur', event);
         },
         handleInput(event) {
             let value = event.target.value;
-            this.$emit('input', value);
+            this.$emit('moe:input', value);
             this.setCurrentValue(value);
-            this.$emit('change', event);
+            this.$emit('moe:change', event);
         },
         handleChange(event) {
-            this.$emit('change', event);
+            this.$emit('moe:change', event);
         },
         setCurrentValue(value) {
             if (value === this.currentValue) return;
@@ -126,11 +131,20 @@ export default {
             const minRows = autosize.minRows;
             const maxRows = autosize.maxRows;
             this.textareaStyles = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
+        },
+        updateStyle(state) {
+            if (this.icon === 'neko') {
+                if (state === 'focus') {
+                    this.updateClass = `${prefix}-${this.icon}-focus`
+                } else if (state === 'blur') {
+                    this.updateClass = ''
+                }
+            }
         }
     },
     mounted() {
         this.resizeTextarea();
     },
-    
+
 }
 </script>

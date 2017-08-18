@@ -2,7 +2,6 @@
 const path = require('path'),
     fs = require('fs'),
     packageConf = JSON.parse(fs.readFileSync('./package.json', 'utf-8')),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     merge = require('webpack-merge'),
     webpackBaseConfig = require('./webpack.base.conf.js');
@@ -12,31 +11,32 @@ let version = packageConf.version,
     library = packageConf.name.toUpperCase();
 
 const styleLoaders = [{
-    test: /\.s[a|c]ss$/,
-    exclude: /node_modules/,
-    loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-            loader: 'css-loader',
-            options: {
-                minimize: true
-            }
-        }, {
-            loader: 'sass-loader?sourceMap'
-        }]
-    })
+    test: /\.vue$/,
+    loader: 'vue-loader',
+    options: {
+        loaders: {
+            css: 'vue-style-loader!css-loader',
+            scss: 'vue-style-loader!css-loader!sass-loader'
+        },
+        postLoaders: {
+            html: 'babel-loader'
+        }
+    }
 }, {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-            loader: 'css-loader',
-            options: {
-                minimize: true
-            }
-        }]
-    })
-},];
+    use: [
+        'style-loader',
+        'css-loader',
+        'autoprefixer-loader'
+    ]
+}, {
+    test: /\.scss$/,
+    use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader?sourceMap'
+    ]
+}];
 webpackBaseConfig.module.rules = webpackBaseConfig.module.rules.concat(styleLoaders);
 module.exports = merge(webpackBaseConfig, {
     entry: {
@@ -55,9 +55,9 @@ module.exports = merge(webpackBaseConfig, {
         //     name: 'vendors',
         //     filename: 'vendor.bundle.js'
         // }),
-        new ExtractTextPlugin({
-            filename: '[name].[contenthash:8].min.css'
-        }),
+        // new ExtractTextPlugin({
+        //     filename: '[name].[contenthash:8].min.css'
+        // }),
         new HtmlWebpackPlugin({
             inject: true,
             filename: path.join(__dirname, '../docs/index.html'),

@@ -36,9 +36,14 @@ $btn-svg-width-base: 20px;
 
 $input-height: 32px;
 $input-padding: 4px 7px;
+$input-default-color: $default-color;
+$input-border-color: $grey-color;
 $input-placeholder-color: #C5C5C5;
-$input-disabled-bg: $disable-bg;
+$input-disabled-bg: #e4e4e4;
+$input-primary-color: $primary-color;
+$input-primary-color-light: $primary-color-light;
 $input-disabled-border: $disable-border;
+$input-border-radius: 4px;
 
 $transition-time: .3s;
 
