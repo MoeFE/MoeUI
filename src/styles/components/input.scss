@@ -4,6 +4,8 @@ $input-prefix: #{$prefix}input;
     width: 100%;
     position: relative;
     vertical-align: middle;
+    border-radius: $input-border-radius;
+    background-color: $background;
 }
 
 .#{$input-prefix} {
@@ -11,13 +13,12 @@ $input-prefix: #{$prefix}input;
     width: 100%;
     height: $input-height;
     line-height: $line-height;
-    padding: $input-padding;
-    font-size: $font-size;
-    border: 1px solid $input-border-color;
     border-radius: $input-border-radius;
+    padding: $input-padding;
+    border: 1px solid $input-border-color;
+    font-size: $font-size;
     color: $input-default-color;
-    background-color: $background;
-    background-image: none;
+    background: none;
     position: relative;
     cursor: text;
     @include border-box();
@@ -41,7 +42,7 @@ $input-prefix: #{$prefix}input;
             border-color: $grey-color;
         }
     }
-    &-center{
+    &-center {
         text-align: center;
     }
 }
@@ -59,40 +60,160 @@ $input-prefix: #{$prefix}input;
         border-style: solid;
         border-width: 0 15px 30px 15px;
         border-color: transparent transparent $grey-color transparent;
-        transition: border $transition-time ease-in-out, filter $transition-time ease-in-out, box-shadow $transition-time ease-in-out;    
+        transition: border $transition-time ease-in-out, filter $transition-time ease-in-out, box-shadow $transition-time ease-in-out;
         z-index: -1;
     }
     &::before {
-        left: 10%;        
+        left: 10%;
     }
     &::after {
         right: 10%;
     }
     &-focus {
         &::before {
-            animation: neko-left .5s ease-in-out;
+            animation: neko-left 10s linear infinite;
             border-color: transparent transparent $input-primary-color transparent;
-            filter:drop-shadow(0 0 3px $input-primary-color-light)
+            filter: drop-shadow(0 0 3px $input-primary-color-light)
         }
         &::after {
-            animation: neko-right .5s ease-in-out;
+            animation: neko-right 10s linear infinite;
             border-color: transparent transparent $input-primary-color transparent;
-            filter:drop-shadow(0 0 3px $input-primary-color-light)
+            filter: drop-shadow(0 0 3px $input-primary-color-light)
         }
     }
     @keyframes neko-left {
-        50% {
-            transform: rotateZ(-10deg);
+        0% {
+            transform: rotateZ(0);
         }
-        100% {
+        3% {
+            transform: rotateZ(-15deg);
+        }
+        6% {
+            transform: rotateZ(0);
+        }
+        20% {
+            transform: rotateZ(0);
+        }
+        23% {
+            transform: rotateZ(-15deg);
+        }
+        24% {
+            transform: rotateZ(0);
+        }
+        27% {
+            transform: rotateZ(-15deg);
+        }
+        30% {
+            transform: rotateZ(0);
+        }
+        40% {
+            transform: rotateZ(0);
+        }
+        43% {
+            transform: rotateZ(-15deg);
+        }
+        46% {
+            transform: rotateZ(0);
+        }
+        60% {
+            transform: rotateZ(0);
+        }
+        63% {
+            transform: rotateZ(-15deg);
+        }
+        64% {
+            transform: rotateZ(0);
+        }
+        67% {
+            transform: rotateZ(-15deg);
+        }
+        70% {
+            transform: rotateZ(0);
+        }
+        80% {
+            transform: rotateZ(0);
+        }
+        83% {
+            transform: rotateZ(-15deg);
+        }
+        86% {
+            transform: rotateZ(0);
+        }
+        90% {
+            transform: rotateZ(0);
+        }
+        93% {
+            transform: rotateZ(-15deg);
+        }
+        96% {
             transform: rotateZ(0);
         }
     }
     @keyframes neko-right {
-        50% {
-            transform: rotateZ(10deg);
+        0% {
+            transform: rotateZ(0);
         }
-        100% {
+        3% {
+            transform: rotateZ(15deg);
+        }
+        6% {
+            transform: rotateZ(0);
+        }
+        20% {
+            transform: rotateZ(0);
+        }
+        23% {
+            transform: rotateZ(15deg);
+        }
+        24% {
+            transform: rotateZ(0);
+        }
+        27% {
+            transform: rotateZ(15deg);
+        }
+        30% {
+            transform: rotateZ(0);
+        }
+        40% {
+            transform: rotateZ(0);
+        }
+        43% {
+            transform: rotateZ(15deg);
+        }
+        46% {
+            transform: rotateZ(0);
+        }
+        60% {
+            transform: rotateZ(0);
+        }
+        63% {
+            transform: rotateZ(15deg);
+        }
+        64% {
+            transform: rotateZ(0);
+        }
+        67% {
+            transform: rotateZ(15deg);
+        }
+        70% {
+            transform: rotateZ(0);
+        }
+        80% {
+            transform: rotateZ(0);
+        }
+        83% {
+            transform: rotateZ(15deg);
+        }
+        86% {
+            transform: rotateZ(0);
+        }
+        90% {
+            transform: rotateZ(0);
+        }
+        93% {
+            transform: rotateZ(15deg);
+        }
+        96% {
             transform: rotateZ(0);
         }
     }
