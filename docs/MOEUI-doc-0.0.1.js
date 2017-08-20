@@ -15768,8 +15768,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     data: function data() {
         return {
-            value1: ''
+            value1: '',
+            color: ''
         };
+    },
+
+    methods: {
+        handleFocus: function handleFocus(e) {
+            this.color = '#c0b0ff';
+        },
+        handleBlur: function handleBlur() {
+            this.color = '';
+        }
     }
 };
 
@@ -15796,7 +15806,7 @@ module.exports = { render: function render() {
         },
         expression: "value1"
       }
-    }), _vm._v(" "), _c('p', [_vm._v("支持v-model: " + _vm._s(_vm.value1))]), _vm._v(" "), _c('h2', [_vm._v("Texterea")]), _vm._v(" "), _c('moe-input', {
+    }), _vm._v(" "), _c('h2', [_vm._v("Texterea")]), _vm._v(" "), _c('moe-input', {
       staticStyle: {
         "width": "300px"
       },
@@ -15825,7 +15835,163 @@ module.exports = { render: function render() {
         "center": true,
         "placeholder": "> - <"
       }
-    })], 1);
+    }), _vm._v(" "), _c('h2', {
+      style: {
+        'color': _vm.color
+      }
+    }, [_vm._v("Events")]), _vm._v(" "), _c('moe-input', {
+      staticStyle: {
+        "width": "300px"
+      },
+      attrs: {
+        "placeholder": "Name"
+      },
+      on: {
+        "moe:focus": _vm.handleFocus,
+        "moe:blur": _vm.handleBlur
+      },
+      model: {
+        value: _vm.value1,
+        callback: function callback($$v) {
+          _vm.value1 = $$v;
+        },
+        expression: "value1"
+      }
+    }), _vm._v(" "), _c('div', {
+      staticClass: "tb-ctn"
+    }, [_c('moe-row', {
+      staticClass: "tb-row",
+      attrs: {
+        "type": "flex"
+      }
+    }, [_c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("focus event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:focus")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("blur event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:focus")])])], 1), _vm._v(" "), _c('moe-row', {
+      staticClass: "tb-row",
+      attrs: {
+        "type": "flex"
+      }
+    }, [_c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("enter event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:enter")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("keydown event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:keydown")])])], 1), _vm._v(" "), _c('moe-row', {
+      staticClass: "tb-row",
+      attrs: {
+        "type": "flex"
+      }
+    }, [_c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("keypress event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:keypress")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("keyup event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:keyup")])])], 1), _vm._v(" "), _c('moe-row', {
+      staticClass: "tb-row",
+      attrs: {
+        "type": "flex"
+      }
+    }, [_c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("input event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:input")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-title",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("change event")])]), _vm._v(" "), _c('moe-col', {
+      staticClass: "tb-content",
+      attrs: {
+        "span": 6
+      }
+    }, [_c('div', {
+      staticClass: "tb-words"
+    }, [_vm._v("@moe:change")])])], 1)], 1)], 1);
   }, staticRenderFns: [] };
 
 /***/ })
