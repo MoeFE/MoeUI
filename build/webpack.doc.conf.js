@@ -64,7 +64,7 @@ module.exports = merge(webpackBaseConfig, {
         main: './examples/main'
     },
     output: {
-        path: path.resolve(__dirname, '../docs'),
+        path: path.resolve(__dirname, '../dist'),
         publicPath: './',
         filename: `${library}-doc-${version}.js`,
         library: 'moeui',
@@ -74,7 +74,7 @@ module.exports = merge(webpackBaseConfig, {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
-            filename: path.join(__dirname, '../docs/index.html'),
+            filename: path.join(__dirname, '../dist/index.html'),
             template: path.join(__dirname, '../examples/index.html')
         }),
         new ExtractTextPlugin({

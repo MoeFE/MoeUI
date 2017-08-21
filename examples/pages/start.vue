@@ -22,7 +22,7 @@ export default {
     right: 0;
     bottom: 0;
     overflow: hidden;
-    background: url('../assets/eromanga.jpg') no-repeat 150px bottom;
+    background: url('../assets/eromanga.bg.jpg') no-repeat 150px bottom;
     background-size: 400px auto;
 }
 
