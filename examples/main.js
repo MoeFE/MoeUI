@@ -29,6 +29,9 @@ const router = new VueRouter({
         }, {
             path: '/input',
             component: pages.input
+        }, {
+            path: '/radio',
+            component: pages.radio
         }
     ]
 });

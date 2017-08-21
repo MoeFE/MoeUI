@@ -16,3 +16,8 @@
         color: $color;
     }
 }
+@mixin default-svg(){
+    width: $btn-svg-width-base;
+    height: auto;
+    vertical-align: middle;
+}

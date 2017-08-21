@@ -3,6 +3,7 @@ import Button from './components/button';
 import ButtonGroup from './components/button-group';
 import { Row, Col } from './components/grid';
 import Input from './components/input';
+import Radio from './components/radio';
 
 const components = [
     Button,
@@ -10,6 +11,7 @@ const components = [
     Row,
     Col,
     Input,
+    Radio,
 ];
     
 const install = function (Vue) {
@@ -32,4 +34,5 @@ module.exports = { // eslint-disable-line no-undef
     Row,
     Col,
     Input,
+    Radio,
 };
