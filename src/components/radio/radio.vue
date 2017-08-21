@@ -1,6 +1,6 @@
 <template>
-    <label class="moe-radio-wrapper">
-        <input type="radio" class="moe-radio moe-radio-hide">
+    <label :class="classes">
+        <input type="radio" :name="name" :value="value" class="moe-radio moe-radio-hide">
         <star :class="'moe-radio-svg'" v-if="icon === 'star'"></star>
         <star :class="'moe-radio-svg-shadow'" v-if="icon === 'star'"></star>
         <heart :class="'moe-radio-svg'" v-if="icon === 'heart'"></heart>
@@ -17,7 +17,23 @@ export default {
     name: 'MoeRadio',
     components: { Star, Heart },
     props: {
-        'icon': String
-    }
+        'icon': String,
+        'value': String,
+        'name': String,
+        'type': {
+            type: String,
+            default: 'primary'
+        }
+    },
+    computed: {
+        classes() {
+            return [
+                `${prefix}-wrapper`,
+                {
+                    [`${prefix}-${this.type}`]: !!this.type,
+                }
+            ];
+        }
+    },
 }
 </script>
