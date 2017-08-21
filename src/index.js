@@ -2,12 +2,14 @@ import './styles/index.scss';
 import Button from './components/button';
 import ButtonGroup from './components/button-group';
 import { Row, Col } from './components/grid';
+import Input from './components/input';
 
 const components = [
     Button,
     ButtonGroup,
     Row,
     Col,
+    Input,
 ];
     
 const install = function (Vue) {
@@ -25,5 +27,9 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = { // eslint-disable-line no-undef
     install,
-    Button
+    Button,
+    ButtonGroup,
+    Row,
+    Col,
+    Input,
 };

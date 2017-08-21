@@ -5,6 +5,9 @@
                 <li>
                     <router-link to="/">Home</router-link>
                 </li>
+            </ul>
+            <div class="title">Basic</div>
+            <ul class="list">
                 <li>
                     <router-link to="/grid">Grid</router-link>
                 </li>
@@ -15,6 +18,13 @@
                     <router-link to="/color">Color</router-link>
                 </li>
             </ul>
+            <div class="title">Form</div>
+            <ul class="list">
+                <li>
+                    <router-link to="/input">Input</router-link>
+                </li>
+            </ul>
+            
         </nav>
         <router-view></router-view>
     </div>
@@ -27,10 +37,11 @@ export default {
 </script>
 
 <style lang="scss">
-.content{
+.content {
     box-sizing: border-box;
     padding: 20px 0 0 40px;
 }
+
 nav {
     position: fixed;
     width: 200px;
@@ -51,6 +62,11 @@ a:active {
     color: inherit;
 }
 
+.title{
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
 .list,
 .list li {
     list-style: none;
@@ -62,7 +78,7 @@ a:active {
         height: 40px;
         font-size: 20px;
         a {
-            width: 100%;            
+            width: 100%;
             float: right;
             line-height: 40px;
             transition: .3s;
