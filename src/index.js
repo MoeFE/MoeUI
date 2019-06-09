@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import Button from './components/button';
 import ButtonGroup from './components/button-group';
 import { Row, Col } from './components/grid';
@@ -13,7 +12,7 @@ const components = [
     Input,
     Radio,
 ];
-    
+
 const install = function (Vue) {
     if (install.installed) return;
 

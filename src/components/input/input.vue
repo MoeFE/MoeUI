@@ -1,8 +1,49 @@
 <template>
-    <div :class="[wrapClasses, updateClass]">
-        <input v-if="type !== 'textarea'" ref="input" :type="type" :class="inputClasses" :placeholder="placeholder" :disabled="disabled" :maxlength="maxlength" :readonly="readonly" :name="name" :value="currentValue" :autofocus="autofocus" :autocomplete="autoComplete" @keyup.enter="handleEnter" @keyup="handleKeyup" @keypress="handleKeypress" @keydown="handleKeydown" @focus="handleFocus" @blur="handleBlur" @input="handleInput" @change="handleChange">
-        <textarea v-else ref="textarea" :class="textareaClasses" :style="textareaStyles" :placeholder="placeholder" :disabled="disabled" :rows="rows" :maxlength="maxlength" :readonly="readonly" :name="name" :value="currentValue" :autofocus="autofocus" @keyup.enter="handleEnter" @keyup="handleKeyup" @keypress="handleKeypress" @keydown="handleKeydown" @focus="handleFocus" @blur="handleBlur" @input="handleInput"></textarea>
-    </div>
+  <div :class="[wrapClasses, updateClass]">
+    <input
+      v-if="type !== 'textarea'"
+      ref="input"
+      :type="type"
+      :class="inputClasses"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :maxlength="maxlength"
+      :readonly="readonly"
+      :name="name"
+      :value="currentValue"
+      :autofocus="autofocus"
+      :autocomplete="autoComplete"
+      @keyup.enter="handleEnter"
+      @keyup="handleKeyup"
+      @keypress="handleKeypress"
+      @keydown="handleKeydown"
+      @focus="handleFocus"
+      @blur="handleBlur"
+      @input="handleInput"
+      @change="handleChange"
+    >
+    <textarea
+      v-else
+      ref="textarea"
+      :class="textareaClasses"
+      :style="textareaStyles"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :rows="rows"
+      :maxlength="maxlength"
+      :readonly="readonly"
+      :name="name"
+      :value="currentValue"
+      :autofocus="autofocus"
+      @keyup.enter="handleEnter"
+      @keyup="handleKeyup"
+      @keypress="handleKeypress"
+      @keydown="handleKeydown"
+      @focus="handleFocus"
+      @blur="handleBlur"
+      @input="handleInput"
+    ></textarea>
+  </div>
 </template>
 
 <script>
@@ -135,9 +176,9 @@ export default {
         updateStyle(state) {
             if (this.icon === 'neko') {
                 if (state === 'focus') {
-                    this.updateClass = `${prefix}-${this.icon}-focus`
+                    this.updateClass = `${prefix}-${this.icon}-focus`;
                 } else if (state === 'blur') {
-                    this.updateClass = ''
+                    this.updateClass = '';
                 }
             }
         }
@@ -146,5 +187,5 @@ export default {
         this.resizeTextarea();
     },
 
-}
+};
 </script>

@@ -2,7 +2,7 @@
   "name": "moeui",
   "version": "0.0.1",
   "description": "UI components Library with Vue.js (Moe is Justice!!!)",
-  "main": "index.js",
+  "main": "src/index.js",
   "directories": {
     "example": "examples"
   },
@@ -56,6 +56,6 @@
     "webpack-merge": "^3.0.0"
   },
   "dependencies": {
-    "svg.js": "^2.6.3"
+    "svg.js": "^2.7.1"
   }
 }

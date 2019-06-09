@@ -5,29 +5,37 @@ $font-weight: 400;
 $font-size: 14px;
 $line-height: 1.5;
 
-$background: #fcfcfc;
-$default-color: #8f8f8f;
-$default-color-dark: #808080;
-$white-color: #fffefe;
-$grey-color: #C5C5C5;
-$disable-bg: #fcfcfc;
-$disable-border: #e0d9ff;
+$background: #fcfcfc !default;
+$default-color: #8f8f8f !default;
+$default-color-dark: #808080 !default;
+$white-color: #ffffff !default;
+$grey-color: #C5C5C5 !default;
+$disable-bg: #fcfcfc !default;
 
-$primary-color: #c0b0ff;
-$primary-color-light: #cabdff;
-$violent-color: #ff7a8d;
-$violent-color-light: #ff91a2;
-$remindful-color: #ffcb78;
-$remindful-color-light: #ffd591;
-$comfy-color: #b5e378;
-$comfy-color-light: #c0e391;
+$primary-color: #c0b0ff !default;
+// $primary-color-light: #cabdff;
+$primary-color-light: mix($white-color, $primary-color, 20%) !default;
+$primary-color-light-2: mix($white-color, $primary-color, 30%) !default;
+$primary-color-light-3: mix($white-color, $primary-color, 40%) !default;
+$violent-color: #ff7a8d !default;
+// $violent-color-light: #ff91a2;
+$violent-color-light:  mix($white-color, $violent-color, 20%) !default;
+$remindful-color: #ffcb78 !default;
+// $remindful-color-light: #ffd591;
+$remindful-color-light:  mix($white-color, $remindful-color, 20%) !default;
+$comfy-color: #b5e378 !default;
+// $comfy-color-light: #c0e391;
+$comfy-color-light:  mix($white-color, $comfy-color, 20%) !default;
+
+$disable-border: $primary-color-light-2 !default;
 
 $margin-h: 10px 0;
 $margin-p: 5px 0;
 
-$btn-default-bg: #fcfcfc;
-$btn-default-border: #c0b0ff;
-$btn-disable-color: #e0d9ff;
+$btn-default-bg: $background;
+$btn-default-border: $primary-color;
+// $btn-disable-color: #e0d9ff;
+$btn-disable-color: $primary-color-light-3;
 $btn-disable-bg: $disable-bg;
 $btn-disable-border: $disable-border;
 $btn-padding-base: 6px 15px;

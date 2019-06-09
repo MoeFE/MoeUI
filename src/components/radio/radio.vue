@@ -1,12 +1,12 @@
 <template>
-    <label :class="classes">
-        <input type="radio" :name="name" :value="value" class="moe-radio moe-radio-hide">
-        <star :class="'moe-radio-svg'" v-if="icon === 'star'"></star>
-        <star :class="'moe-radio-svg-shadow'" v-if="icon === 'star'"></star>
-        <heart :class="'moe-radio-svg'" v-if="icon === 'heart'"></heart>
-        <heart :class="'moe-radio-svg-shadow'" v-if="icon === 'heart'"></heart>
-        <slot></slot>
-    </label>
+  <label :class="classes">
+    <input type="radio" :name="name" :value="value" class="moe-radio moe-radio-hide">
+    <star :class="'moe-radio-svg'" v-if="icon === 'star'"></star>
+    <star :class="'moe-radio-svg-shadow'" v-if="icon === 'star'"></star>
+    <heart :class="'moe-radio-svg'" v-if="icon === 'heart'"></heart>
+    <heart :class="'moe-radio-svg-shadow'" v-if="icon === 'heart'"></heart>
+    <slot></slot>
+  </label>
 </template>
 
 <script>
@@ -35,5 +35,5 @@ export default {
             ];
         }
     },
-}
+};
 </script>

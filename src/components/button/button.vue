@@ -1,9 +1,9 @@
 <template>
-    <button :disabled="disabled" @click="handleClick" :class="classes">
-        <slot></slot>
-        <star :class="'moe-btn-svg moe-btn-svg-'+type" v-if="icon==='star'"></star>
-        <heart :class="'moe-btn-svg moe-btn-svg-'+type" v-if="icon==='heart'"></heart>
-    </button>
+  <button :disabled="disabled" @click="handleClick" :class="classes">
+    <slot></slot>
+    <star :class="'moe-btn-svg moe-btn-svg-'+type" v-if="icon==='star'"></star>
+    <heart :class="'moe-btn-svg moe-btn-svg-'+type" v-if="icon==='heart'"></heart>
+  </button>
 </template>
 
 <script>
@@ -35,5 +35,5 @@ export default {
         }
     },
 
-}
+};
 </script>
